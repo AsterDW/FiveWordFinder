@@ -51,7 +51,7 @@ namespace FiveWordFinder.WordProcessing.Strategies
         {
             Reset(graph.WordSet.Count);
 
-            Parallel.ForEach(graph.WordSet, FiveCharWordModel =>
+            Parallel.ForEach(graph.WordSet, word =>
             {
                 if (cancellationToken.IsCancellationRequested)
                 {
@@ -63,8 +63,8 @@ namespace FiveWordFinder.WordProcessing.Strategies
                 OnProgressChanged(GetPercent(), i, TotalCount, GetMessage());
 
                 Stack<FiveCharWord> wordStack = new Stack<FiveCharWord>();
-                wordStack.Push(FiveCharWordModel);
-                recursiveFindCliques(5, wordStack, FiveCharWordModel.Neighbors);
+                wordStack.Push(word);
+                recursiveFindCliques(5, wordStack, word.Neighbors);
                 wordStack.Pop();
             });
 
