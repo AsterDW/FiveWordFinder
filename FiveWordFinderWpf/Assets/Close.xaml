@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This file is NOT compatible with Silverlight-->
+<Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+  <Canvas Name="SVGRoot" Width="32.0" Height="32.0">
+    <Canvas.RenderTransform>
+      <TranslateTransform X="0" Y="0"/>
+    </Canvas.RenderTransform>
+    <Canvas.Resources>
+      <!--Unknown tag: inkscape:path-effect-->
+      <!--Unknown tag: inkscape:path-effect-->
+    </Canvas.Resources>
+    <!--Unknown tag: sodipodi:namedview-->
+    <Canvas Name="layer1">
+      <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="rect593" Fill="#FF333333">
+        <Path.Data>
+          <PathGeometry Figures="m 6.6263639 -0.4998398 0 0.9996796 a 1 1 45 0 0 1 1 l 12.5012131 0 a 1 1 45 0 1 1 1 V 15.001053 a 1 1 45 0 0 1 1 h 0.99968 a 1 1 135 0 0 1 -1 V 2.4998398 a 1 1 135 0 1 1 -1 l 12.501213 0 a 1 1 135 0 0 1 -1 v -0.9996796 a 1 1 45 0 0 -1 -1 l -12.501213 0 a 1 1 45 0 1 -1 -1 V -15.001053 a 1 1 45 0 0 -1 -1 h -0.99968 a 1 1 135 0 0 -1 1 v 12.5012132 a 1 1 135 0 1 -1 1 l -12.5012131 0 a 1 1 135 0 0 -1 1 z" FillRule="NonZero"/>
+        </Path.Data>
+        <Path.RenderTransform>
+          <RotateTransform Angle="45"/>
+        </Path.RenderTransform>
+      </Path>
+    </Canvas>
+  </Canvas>
+</Viewbox>

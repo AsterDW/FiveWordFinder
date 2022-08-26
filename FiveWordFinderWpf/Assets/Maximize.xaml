@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This file is NOT compatible with Silverlight-->
+<Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+  <Canvas Name="SVGRoot" Width="32.0" Height="32.0">
+    <Canvas.RenderTransform>
+      <TranslateTransform X="0" Y="0"/>
+    </Canvas.RenderTransform>
+    <Canvas.Resources>
+      <!--Unknown tag: inkscape:path-effect-->
+      <!--Unknown tag: inkscape:path-effect-->
+    </Canvas.Resources>
+    <!--Unknown tag: sodipodi:namedview-->
+    <Canvas Name="layer1">
+      <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="rect734" Fill="#FF000000">
+        <Path.Data>
+          <PathGeometry Figures="M 4 4.9238281 V 27 a 1 1 45 0 0 1 1 l 22 0 a 1 1 135 0 0 1 -1 L 28 5 A 1 1 45 0 0 27 4 H 5 A 0.96266774 0.96266774 137.26738 0 0 4 4.9238281 Z m 2.6457031 0.921875 H 25.354297 a 0.8 0.8 45 0 1 0.8 0.8 V 25.354297 a 0.8 0.8 135 0 1 -0.8 0.8 H 6.6457031 a 0.8 0.8 45 0 1 -0.8 -0.8 V 6.6457031 a 0.8 0.8 135 0 1 0.8 -0.8 z" FillRule="NonZero"/>
+        </Path.Data>
+      </Path>
+    </Canvas>
+  </Canvas>
+</Viewbox>

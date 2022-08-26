@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="32.0px"
+   height="32.0px"
+   viewBox="0 0 32.0 32.0"
+   version="1.1"
+   id="SVGRoot"
+   sodipodi:docname="Restore.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview721"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="true"
+     inkscape:zoom="32"
+     inkscape:cx="11.09375"
+     inkscape:cy="16.78125"
+     inkscape:window-width="1920"
+     inkscape:window-height="1137"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid727" />
+  </sodipodi:namedview>
+  <defs
+     id="defs716">
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect4941"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Use fill-rule evenodd on &lt;b&gt;fill and stroke&lt;/b&gt; dialog if no flatten result after convert clip to paths." />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect2229"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,1,0,1 @ F,0,0,1,0,0,0,1 @ F,0,1,1,0,1,0,1 @ F,0,1,1,0,1,0,1 @ F,0,0,1,0,1,0,1 | F,0,1,1,0,0.8,0,1 @ F,0,1,1,0,0.8,0,1 @ F,0,1,1,0,0.8,0,1 @ F,0,1,1,0,0.8,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="1"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="true"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect2211"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,1,0,1 @ F,0,0,1,0,0,0,1 @ F,0,1,1,0,1,0,1 @ F,0,1,1,0,1,0,1 @ F,0,0,1,0,1,0,1 | F,0,1,1,0,0.8,0,1 @ F,0,1,1,0,0.8,0,1 @ F,0,1,1,0,0.8,0,1 @ F,0,1,1,0,0.8,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="1"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="true"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect2197"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,1,0,1 @ F,0,0,1,0,0,0,1 @ F,0,1,1,0,1,0,1 @ F,0,1,1,0,1,0,1 @ F,0,0,1,0,1,0,1 | F,0,1,1,0,0.8,0,1 @ F,0,1,1,0,0.8,0,1 @ F,0,1,1,0,0.8,0,1 @ F,0,1,1,0,0.8,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="1"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="true"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect2195"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 | F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="1"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="true"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path2207"
+       clip-path="none"
+       style="color:#000000;fill:#1a1a1a;stroke-width:0.833171;-inkscape-stroke:none;fill-opacity:1"
+       d="M 9 4.0078125 A 0.89224944 0.89224944 0 0 0 8 4.7773438 L 8 8 L 9.5371094 8 L 9.5371094 6.3457031 A 0.8 0.8 0 0 1 10.337891 5.5449219 L 25.662109 5.5449219 A 0.8 0.8 0 0 1 26.460938 6.3457031 L 26.460938 21.662109 A 0.8 0.8 0 0 1 25.662109 22.462891 L 24 22.462891 L 24 24 L 27 24 A 1 1 0 0 0 28 23 L 28 5.0078125 A 1 1 0 0 0 27 4.0078125 L 9 4.0078125 z " />
+    <path
+       style="color:#000000;fill:#1a1a1a;stroke-width:0.833171;-inkscape-stroke:none"
+       d="m 4,8.777028 v 18.222659 a 1,1 45 0 0 1,1 h 18 a 1,1 135 0 0 1,-1 V 9.0074709 a 1,1 45 0 0 -1,-1 H 5 A 0.89224944,0.89224944 142.41966 0 0 4,8.777028 Z M 6.3380859,9.5449582 H 21.661914 a 0.8,0.8 45 0 1 0.8,0.7999998 V 25.6622 a 0.8,0.8 135 0 1 -0.8,0.8 H 6.3380859 a 0.8,0.8 45 0 1 -0.8,-0.8 V 10.344958 a 0.8,0.8 135 0 1 0.8,-0.7999998 z"
+       id="rect734"
+       inkscape:path-effect="#path-effect2197"
+       inkscape:original-d="M 4,8.0074709 V 8.777028 27.999687 H 24 V 8.0074709 Z M 5.5380859,9.5449582 H 22.461914 V 26.4622 H 5.5380859 Z" />
+    <path
+       style="fill:#e6e6e6;fill-opacity:0.5;stroke:none;stroke-width:0.0260313;stroke-dasharray:none;stroke-opacity:1"
+       d="M 24.008158,15.585938 24,8.734375 23.922873,8.578125 C 23.810991,8.3514663 23.593804,8.1470487 23.379793,8.0669772 L 23.20078,8 H 16.371739 9.5426971 l 0.0099,-0.9296875 C 9.5620083,6.186794 9.5658558,6.1344174 9.6300741,6.015625 9.719878,5.8495039 9.8747327,5.7052863 10.046875,5.6274544 10.187093,5.5640566 10.210105,5.5638726 18,5.5638726 c 7.789895,0 7.812907,1.841e-4 7.953125,0.063582 0.172142,0.077832 0.326997,0.2220495 0.416801,0.3881706 l 0.06757,0.125 0.0081,7.7924028 c 0.0055,5.240475 -0.0024,7.831297 -0.02386,7.911167 -0.05563,0.206606 -0.217411,0.410383 -0.401886,0.506219 l -0.167631,0.08709 h -0.917962 -0.917961 z"
+       id="path5014" />
+  </g>
+</svg>

@@ -1,0 +1,240 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="WindowButtonForeground" Color="AliceBlue"/>
+    <SolidColorBrush x:Key="WindowButtonBackground" Color="Transparent"/>
+    <SolidColorBrush x:Key="WindowButtonHighlight" Color="#647d96"/>
+    <SolidColorBrush x:Key="WindowButtonPressed" Color="#3c5064"/>
+    <SolidColorBrush x:Key="CloseButtonHighlight" Color="Red" />
+    <SolidColorBrush x:Key="CloseButtonPressed" Color="DarkRed"/>
+    <SolidColorBrush x:Key="ContentBackground" Color="#fafaff"/>
+
+    <SolidColorBrush x:Key="CaptionForeground" Color="AliceBlue"/>
+
+    <DataTemplate x:Key="MaximizeImage">
+        <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+            <Canvas Width="32.0" Height="32.0">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0"/>
+                </Canvas.RenderTransform>
+                <Canvas.Resources>
+                    <!--Unknown tag: inkscape:path-effect-->
+                    <!--Unknown tag: inkscape:path-effect-->
+                </Canvas.Resources>
+                <!--Unknown tag: sodipodi:namedview-->
+                <Canvas Name="layer1">
+                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="rect734" Fill="{StaticResource WindowButtonForeground}">
+                        <Path.Data>
+                            <PathGeometry Figures="M 4 4.9238281 V 27 a 1 1 45 0 0 1 1 l 22 0 a 1 1 135 0 0 1 -1 L 28 5 A 1 1 45 0 0 27 4 H 5 A 0.96266774 0.96266774 137.26738 0 0 4 4.9238281 Z m 2.6457031 0.921875 H 25.354297 a 0.8 0.8 45 0 1 0.8 0.8 V 25.354297 a 0.8 0.8 135 0 1 -0.8 0.8 H 6.6457031 a 0.8 0.8 45 0 1 -0.8 -0.8 V 6.6457031 a 0.8 0.8 135 0 1 0.8 -0.8 z" FillRule="NonZero"/>
+                        </Path.Data>
+                    </Path>
+                </Canvas>
+            </Canvas>
+        </Viewbox>
+    </DataTemplate>
+
+    <DataTemplate x:Key="RestoreImage">
+        <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+            <Canvas Name="SVGRootRestore" Width="32.0" Height="32.0">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0"/>
+                </Canvas.RenderTransform>
+                <Canvas.Resources>
+                    <!--Unknown tag: inkscape:path-effect-->
+                    <!--Unknown tag: inkscape:path-effect-->
+                    <!--Unknown tag: inkscape:path-effect-->
+                    <!--Unknown tag: inkscape:path-effect-->
+                    <!--Unknown tag: inkscape:path-effect-->
+                </Canvas.Resources>
+                <!--Unknown tag: sodipodi:namedview-->
+                <Canvas>
+                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path2207" Fill="{StaticResource WindowButtonForeground}" StrokeThickness="0.833171">
+                        <Path.Data>
+                            <PathGeometry Figures="M 9 4.0078125 A 0.89224944 0.89224944 0 0 0 8 4.7773438 L 8 8 L 9.5371094 8 L 9.5371094 6.3457031 A 0.8 0.8 0 0 1 10.337891 5.5449219 L 25.662109 5.5449219 A 0.8 0.8 0 0 1 26.460938 6.3457031 L 26.460938 21.662109 A 0.8 0.8 0 0 1 25.662109 22.462891 L 24 22.462891 L 24 24 L 27 24 A 1 1 0 0 0 28 23 L 28 5.0078125 A 1 1 0 0 0 27 4.0078125 L 9 4.0078125 z " FillRule="NonZero"/>
+                        </Path.Data>
+                    </Path>
+                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="rect734" Fill="{StaticResource WindowButtonForeground}" StrokeThickness="0.833171">
+                        <Path.Data>
+                            <PathGeometry Figures="m 4 8.777028 v 18.222659 a 1 1 45 0 0 1 1 h 18 a 1 1 135 0 0 1 -1 V 9.0074709 a 1 1 45 0 0 -1 -1 H 5 A 0.89224944 0.89224944 142.41966 0 0 4 8.777028 Z M 6.3380859 9.5449582 H 21.661914 a 0.8 0.8 45 0 1 0.8 0.7999998 V 25.6622 a 0.8 0.8 135 0 1 -0.8 0.8 H 6.3380859 a 0.8 0.8 45 0 1 -0.8 -0.8 V 10.344958 a 0.8 0.8 135 0 1 0.8 -0.7999998 z" FillRule="NonZero"/>
+                        </Path.Data>
+                    </Path>
+                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path5014" Fill="#80E6E6E6" StrokeThickness="0.0260313">
+                        <Path.Data>
+                            <PathGeometry Figures="M 24.008158 15.585938 24 8.734375 23.922873 8.578125 C 23.810991 8.3514663 23.593804 8.1470487 23.379793 8.0669772 L 23.20078 8 H 16.371739 9.5426971 l 0.0099 -0.9296875 C 9.5620083 6.186794 9.5658558 6.1344174 9.6300741 6.015625 9.719878 5.8495039 9.8747327 5.7052863 10.046875 5.6274544 10.187093 5.5640566 10.210105 5.5638726 18 5.5638726 c 7.789895 0 7.812907 1.841e-4 7.953125 0.063582 0.172142 0.077832 0.326997 0.2220495 0.416801 0.3881706 l 0.06757 0.125 0.0081 7.7924028 c 0.0055 5.240475 -0.0024 7.831297 -0.02386 7.911167 -0.05563 0.206606 -0.217411 0.410383 -0.401886 0.506219 l -0.167631 0.08709 h -0.917962 -0.917961 z" FillRule="NonZero"/>
+                        </Path.Data>
+                    </Path>
+                </Canvas>
+            </Canvas>
+        </Viewbox>
+    </DataTemplate>
+
+
+    <Style x:Key="WindowButton" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="32"/>
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="Margin" Value="1"/>
+        <Setter Property="Foreground" Value="{StaticResource WindowButtonForeground}"/>
+        <Setter Property="Background" Value="{StaticResource WindowButtonBackground}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource WindowButtonHighlight}"/>
+                        </Trigger>
+                        <Trigger Property="Button.IsPressed" Value="True">
+                            <Setter Property="Background" Value="{StaticResource WindowButtonPressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                    <Border CornerRadius="5"
+                            Width="{Binding Path=ActualHeight, RelativeSource={RelativeSource Self}}" 
+                            Name="border"
+                            BorderThickness="1"
+                            BorderBrush="{TemplateBinding Background}"
+                            Background="{TemplateBinding Background}">
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="MinimizeButton" TargetType="{x:Type Button}" BasedOn="{StaticResource WindowButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource WindowButtonHighlight}"/>
+                        </Trigger>
+                        <Trigger Property="Button.IsPressed" Value="True">
+                            <Setter Property="Background" Value="{StaticResource WindowButtonPressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                    <Border CornerRadius="5"
+                            VerticalAlignment="Stretch"
+                            Width="{Binding Path=ActualHeight, RelativeSource={RelativeSource Self}}"
+                            Name="border"
+                            BorderThickness="1"
+                            BorderBrush="{TemplateBinding Background}"
+                            Background="{TemplateBinding Background}"
+                            SnapsToDevicePixels="True">
+                        <Border Margin="8">
+                            <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="UniformToFill">
+                                <Canvas Name="SVGRoot" Width="32.0" Height="32.0">
+                                    <Canvas.RenderTransform>
+                                        <TranslateTransform X="0" Y="0"/>
+                                    </Canvas.RenderTransform>
+                                    <Canvas.Resources/>
+                                    <!--Unknown tag: sodipodi:namedview-->
+                                    <Canvas Name="layer1">
+                                        <Rectangle xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="4" Canvas.Top="25" Width="24" Height="3" RadiusY="0.5" RadiusX="0.5" Name="rect694" Fill="{StaticResource WindowButtonForeground}"/>
+                                    </Canvas>
+                                </Canvas>
+                            </Viewbox>
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MaximizeButton" TargetType="{x:Type Button}" BasedOn="{StaticResource WindowButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource WindowButtonHighlight}"/>
+                        </Trigger>
+                        <Trigger Property="Button.IsPressed" Value="True">
+                            <Setter Property="Background" Value="{StaticResource WindowButtonPressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                    <Border CornerRadius="5"
+                            VerticalAlignment="Stretch"
+                            Width="{Binding Path=ActualHeight, RelativeSource={RelativeSource Self}}" 
+                            Name="border"
+                            BorderThickness="1"
+                            BorderBrush="{TemplateBinding Background}"
+                            Background="{TemplateBinding Background}"
+                            SnapsToDevicePixels="True">
+                        <Border Margin="8">
+                            <ContentControl>
+                                <ContentControl.Style>
+                                    <Style TargetType="{x:Type ContentControl}">
+                                        <Setter Property="ContentTemplate" Value="{StaticResource MaximizeImage}"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding WindowState, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                     Value="Maximized">
+                                                <Setter Property="ContentTemplate" Value="{StaticResource RestoreImage}"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ContentControl.Style>
+                            </ContentControl>
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CloseButton" TargetType="{x:Type Button}" BasedOn="{StaticResource WindowButton}">
+        <Setter Property="Foreground" Value="{StaticResource WindowButtonForeground}"/>
+        <Setter Property="Background" Value="{StaticResource WindowButtonBackground}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource CloseButtonHighlight}"/>
+                        </Trigger>
+                        <Trigger Property="Button.IsPressed" Value="True">
+                            <Setter Property="Background" Value="{StaticResource CloseButtonPressed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                    <Border  CornerRadius="5" 
+                             VerticalAlignment="Stretch"
+                             Width="{Binding Path=ActualHeight, RelativeSource={RelativeSource Self}}" 
+                             Name="border"
+                             BorderThickness="1"
+                             BorderBrush="{TemplateBinding Background}"
+                             Background="{TemplateBinding Background}"
+                             SnapsToDevicePixels="True">
+                        <Border Margin="8">
+                            <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="UniformToFill">
+                                <Canvas Name="SVGRoot" 
+                                    Width="32"
+                                    Height="32">
+                                    <Canvas.RenderTransform>
+                                        <TranslateTransform X="0" Y="0"/>
+                                    </Canvas.RenderTransform>
+                                    <Canvas Name="layer1">
+                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="rect593" Fill="{StaticResource WindowButtonForeground}">
+                                            <Path.Data>
+                                                <PathGeometry Figures="m 6.6263639 -0.4998398 0 0.9996796 a 1 1 45 0 0 1 1 l 12.5012131 0 a 1 1 45 0 1 1 1 V 15.001053 a 1 1 45 0 0 1 1 h 0.99968 a 1 1 135 0 0 1 -1 V 2.4998398 a 1 1 135 0 1 1 -1 l 12.501213 0 a 1 1 135 0 0 1 -1 v -0.9996796 a 1 1 45 0 0 -1 -1 l -12.501213 0 a 1 1 45 0 1 -1 -1 V -15.001053 a 1 1 45 0 0 -1 -1 h -0.99968 a 1 1 135 0 0 -1 1 v 12.5012132 a 1 1 135 0 1 -1 1 l -12.5012131 0 a 1 1 135 0 0 -1 1 z" FillRule="NonZero"/>
+                                            </Path.Data>
+                                            <Path.RenderTransform>
+                                                <RotateTransform Angle="45"/>
+                                            </Path.RenderTransform>
+                                        </Path>
+                                    </Canvas>
+                                </Canvas>
+                            </Viewbox>
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ContentBorder" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="{StaticResource ContentBackground}"/>
+        <Setter Property="CornerRadius" Value="3"/>
+        <Setter Property="Padding" Value="10, 5"/>
+        <Setter Property="Margin" Value="5, 2, 3, 3"/>
+    </Style>
+
+    <Style TargetType="{x:Type ProgressBar}">
+        <Setter Property="Background" Value="#dce6ff"/>
+        <Setter Property="Foreground" Value="#0073e6"/>
+    </Style>
+</ResourceDictionary>
