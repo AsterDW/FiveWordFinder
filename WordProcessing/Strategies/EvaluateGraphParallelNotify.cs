@@ -75,12 +75,12 @@ namespace FiveWordFinder.WordProcessing.Strategies
         /// <summary>
         /// Recursive function to scan each word in a given graph for common neighbors by calling the function again with
         /// an intersection of the given word's neighbors and the next word's neighbors up to the number of itterations 
-        /// specified by the depth parameter.
+        /// specified by the targetDepth parameter.
         /// </summary>
-        /// <param name="depth"></param>
+        /// <param name="targetDepth"></param>
         /// <param name="wordStack"></param>
         /// <param name="clique"></param>
-        private void recursiveFindCliques(int depth, Stack<FiveCharWord> wordStack, IEnumerable<FiveCharWord> clique, CancellationToken cancellationToken = default(CancellationToken))
+        private void recursiveFindCliques(int targetDepth, Stack<FiveCharWord> wordStack, IEnumerable<FiveCharWord> clique, CancellationToken cancellationToken = default(CancellationToken))
         {
             foreach (var word in clique)
             {
@@ -90,18 +90,25 @@ namespace FiveWordFinder.WordProcessing.Strategies
                 }
 
                 wordStack.Push(word);
-                if (wordStack.Count == depth)
+                if (wordStack.Count == targetDepth)
                 {
-                    var array = wordStack.ToArrayFiFo();
-                    OnCliqueFound(array.Select(x => x.ToString()));
-                    lock (resultsLock)
+                    var wordArrays = GetStackCombinations(wordStack);
+                    foreach (var a in wordArrays)
                     {
-                        CliqueList.Add(wordStack.ToArrayFiFo());
+                        OnCliqueFound(a.Select(w => w.Word));
+                        lock(resultsLock)
+                        {
+                            CliqueList.Add(a.ToArray());
+                        }
                     }
                 }
                 else
                 {
-                    recursiveFindCliques(depth, wordStack, clique.IntersectWithHashSet(word.Neighbors));
+                    var iNeighbors = clique.IntersectWith(word.Neighbors);
+                    
+                    //Skip further processing if not enough potential words to fill the desired stack length
+                    if (iNeighbors.Length >= targetDepth - wordStack.Count)
+                        recursiveFindCliques(targetDepth, wordStack, iNeighbors);
                 }
 
                 wordStack.Pop();

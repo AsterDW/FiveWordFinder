@@ -16,6 +16,18 @@
         }
 
         /// <summary>
+        /// Compares two collections returning only the elements that are present in both as an array.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="first"></param>
+        /// <param name="second"></param>
+        /// <returns></returns>
+        public static T[] IntersectWith<T>(this IEnumerable<T> first, IEnumerable<T> second)
+        {
+            return first.Where(x => second.Contains(x)).ToArray();
+        }
+
+        /// <summary>
         /// Creates a new array and copies the values from the stack in the original order of being added to the stack.
         /// </summary>
         /// <typeparam name="T"></typeparam>

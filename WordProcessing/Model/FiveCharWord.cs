@@ -1,13 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace FiveWordFinder.WordProcessing.Model
 {
-    public class FiveCharWord : IEquatable<FiveCharWord>, IComparable<FiveCharWord>
+    public class FiveCharWord : IEquatable<FiveCharWord>, IComparable<FiveCharWord>, INotifyPropertyChanged
     {
+        #region INotifyPropertyChanged
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        #endregion INotifyPropertyChanged
+
         public string Word { get; private set; }
 
         /// <summary>
@@ -37,10 +48,14 @@ namespace FiveWordFinder.WordProcessing.Model
         //Store the hash code so it isn't recalculated everytime this word is added to a set;
         private int HashCode { get; set; }
 
+        private HashSet<FiveCharWord> _anagrams;
+        public IReadOnlySet<FiveCharWord> Anagrams { get { return _anagrams; } }
+
         /// <summary>
         ///  HashSet to store words that do not have any letters in common with the this Word.
         /// </summary>
-        public HashSet<FiveCharWord> Neighbors { get; private set; }
+        private HashSet<FiveCharWord> _neighbors;
+        public IReadOnlySet<FiveCharWord> Neighbors { get { return _neighbors; } }
 
         public FiveCharWord(string word)
         {
@@ -51,7 +66,27 @@ namespace FiveWordFinder.WordProcessing.Model
             CharBitMask = EncodeWordBits(Word);
             SortHash = CalculateSortHash(Word);
             HashCode = SortHash.GetHashCode();
-            Neighbors = new HashSet<FiveCharWord>();
+            _anagrams = new HashSet<FiveCharWord>();
+            _neighbors = new HashSet<FiveCharWord>();
+        }
+
+        public bool AddAnagram(FiveCharWord word)
+        {
+            if (IsAnagramOf(word))
+            {
+                if (_anagrams.Add(word))
+                {
+                    OnPropertyChanged(nameof(Anagrams));
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public bool IsAnagramOf(FiveCharWord word)
+        {
+            return (this.CharBitMask ^ word.CharBitMask) == 0;
         }
 
         /// <summary>
@@ -62,7 +97,20 @@ namespace FiveWordFinder.WordProcessing.Model
         /// false if the element is not a neighor (has shared letters) or is already present.</returns>
         public bool AddNeighbor(FiveCharWord word)
         {
-            return ((this.CharBitMask & word.CharBitMask) == 0) && Neighbors.Add(word);
+            if (IsNeighborOf(word))
+            {
+                if (_neighbors.Add(word))
+                {
+                    OnPropertyChanged(nameof(Neighbors));
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool IsNeighborOf(FiveCharWord word)
+        {
+            return (this.CharBitMask & word.CharBitMask) == 0;
         }
 
         /// <summary>
