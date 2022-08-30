@@ -9,12 +9,14 @@ const string DefaultOutputFile = "Found_Cliques.txt";
 InitConsole();
 string filePath = ConsoleInputService.GetWordSourceFileName(DefaultSourceFile);
 var evaluator = ConsoleInputService.GetEvaluationStrategy();
+var writeToScreen = ConsoleInputService.GetShouldWriteToScreen();
+
 Console.WriteLine();
 try
 {
     var graph = GenerateWordGraph(filePath);
     var cliqueList = EvaluateGraph(graph, evaluator);
-    WriteCliques(DefaultOutputFile, cliqueList);
+    WriteCliques(DefaultOutputFile, cliqueList, writeToScreen);
 }
 catch(Exception ex)
 {
@@ -82,7 +84,7 @@ IEnumerable<FiveCharWord[]> EvaluateGraph(WordGraph graph, IGraphEvaluationStrat
     return results;
 }
 
-void WriteCliques(string outputFile, IEnumerable<FiveCharWord[]> cliqueList)
+void WriteCliques(string outputFile, IEnumerable<FiveCharWord[]> cliqueList, bool writeToScreen = false)
 {
     if (File.Exists(outputFile))
         File.Delete(outputFile);
@@ -93,7 +95,7 @@ void WriteCliques(string outputFile, IEnumerable<FiveCharWord[]> cliqueList)
             string strings = string.Join<FiveCharWord>("\t", wordList);
             writer.WriteLine(strings);
             
-            if (!Console.IsOutputRedirected)
+            if (writeToScreen && !Console.IsOutputRedirected)
                 Console.WriteLine(strings);
         }
         writer.Close();
