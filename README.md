@@ -49,13 +49,15 @@ To accomplish this task the process performs the following:
      uint value                      2008180505
    - If the word has fewer unique character bits set than the length we can reject this word as it has duplicate letters.
 
-3. Next we create the graph by comparing each word's bitmask with any words alphabetically greater than it. If they share no set bits then add them to the first word's neighbors. This is done to prevent having to prevent wasted itterations on duplicate word groups just in different orders.
+3. Find all Anagrams and link them together. Words with the same characters will return the same cliques so we do not need to search them separately. I keep them for output as they are valid word combinations and should be preserved in the final list.
 
-4. Evaluate the graph to find the groups of 5 words which do not share any letters. To accomplish this I used a recursive function with a maximum depth of 5. Each pass of the recursion works on the intersection of the prior words and their neighbors. If it reaches 5 calls on the stack then we have found a clique of words.
+4. Next we create the graph by comparing each word's bitmask with any words alphabetically greater than it. If they share no set bits then add them to the first word's neighbors. This is done to prevent having to prevent wasted itterations on duplicate word groups just in different orders.
+
+5. Evaluate the graph to find the groups of 5 words which do not share any letters. To accomplish this I used a recursive function with a maximum depth of 5. Each pass of the recursion works on the intersection of the prior words and their neighbors. If it reaches 5 calls on the stack then we have found a clique of words.
 
 My implementation completed the process in:
-- **5.539 seconds** processing Parker's English words file of 370105 words finding the 10175 unique 5 letter words and generating their neighbors
-- **1 minutes 53.795 seconds** To Evaluate the graph and find all the groups of 5 words that do not share letters.
+- **1.49 seconds** processing Parker's English words file of 370105 words finding the 10175 unique 5 letter words and generating their neighbors
+- **34 seconds** To Evaluate the graph and find all the groups of 5 words that do not share letters.
 
 ## Usage Guide
 Download the source code and build the solution, or you can download the release which contains all the files necessary to run.
@@ -74,7 +76,8 @@ Follow the on screen prompts:
 2. Select the evaluation strategy.
    - 1 Runs the process in a single work loop. (This is the slowest method.)
    - 2 runs the process in parallel (This is the one I used for the above times)
-3. Once the process is complete it will write the found cliques to the screen and to a tab delimited file 'found_cliques.txt' in the application folder.
+3. Select option Y or N to write output list to the screen when finished.
+4. Once the process is complete it will write the found cliques to the screen and to a tab delimited file 'found_cliques.txt' in the application folder.
 ![Console](SampleImages/Console.png)
   
 ### Windows WPF UI
