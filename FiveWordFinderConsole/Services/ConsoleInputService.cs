@@ -41,15 +41,15 @@ namespace FiveWordFinderConsole.Services
         public static IGraphEvaluationStrategy GetEvaluationStrategy()
         {
             Console.WriteLine("How should the word graph be evaluated?");
-            Console.WriteLine("1 = Find Loop In Series - (Default)");
-            Console.WriteLine("2 = Find Parallel ForEach");
+            Console.WriteLine("1 = Find Loop In Series");
+            Console.WriteLine("2 = Find Parallel ForEach - (Default)");
             bool inputValid = false;
-            int selection = 1;
+            int selection = 2;
             do
             {
                 string input = Console.ReadLine() ?? string.Empty;
                 if (string.IsNullOrWhiteSpace(input))
-                    input = "1";
+                    input = "2";
 
                 if (!(inputValid = int.TryParse(input, out selection)))
                 {
@@ -64,6 +64,26 @@ namespace FiveWordFinderConsole.Services
             };
 
             return strategy;
+        }
+
+        public static bool GetShouldWriteToScreen()
+        {
+            Console.WriteLine("Write found cliques to screen? (Y / N)");
+            Console.WriteLine("  Select this option to display the list to the console window as well as writing to file.");
+
+            bool result = false;
+            bool inputValid = false;
+            while (!inputValid)
+            {
+                var input = Console.ReadLine();
+                if (!string.IsNullOrEmpty(input))
+                {
+                    inputValid = true;
+                    result = input.ToUpper().First() == 'Y';
+                }    
+            }
+
+            return result;
         }
     }
 }

@@ -42,7 +42,7 @@ namespace FiveWordFinder.WordProcessing
             if (!File.Exists(filePath))
                 throw new FileNotFoundException("The specified file does not exist.", filePath);
 
-            SortedSet<FiveCharWord> wordSet = new SortedSet<FiveCharWord>();
+            SortedSet<FiveCharWord> sortedWordSet = new SortedSet<FiveCharWord>();
 
             FileInfo fileInfo = new FileInfo(filePath);
             using (var stream = fileInfo.OpenRead())
@@ -63,34 +63,45 @@ namespace FiveWordFinder.WordProcessing
 
                         FiveCharWord wm = new FiveCharWord(line);
                         if (wm.CountUniqueLetters == wordLength)
-                            wordSet.Add(wm);
+                            sortedWordSet.Add(wm);
                     }
                 }
                 OnProgressChanged(100, null, null,
                                   $"Reading words from file:");
             }
 
-            WordGraph graph = new WordGraph(wordSet.Count);
-            FillGraph(graph, wordSet, cancellationToken);
+            WordGraph graph = new WordGraph(sortedWordSet.Count);
+            FillGraph(graph, sortedWordSet, cancellationToken);
 
             return graph;
         }
 
         private void FillGraph(WordGraph graph, SortedSet<FiveCharWord> wordSet, CancellationToken cancellationToken = default(CancellationToken))
         {
-            int i = 0;
             //Add the words to the graph set and find words that do not share letters in common.
             //These are stored as Neighbors based on the bit flag evaluation for the characters in a given word.
             foreach (var word in wordSet)
             {
+                if (graph.AddWord(word) == GraphAddResults.AsNewWord)
+                {
+                    OnWordAdded(word);
+                }
+            }
+
+            int i = 0;
+            foreach (var word in graph.WordSet)
+            {
                 i++;
-                OnProgressChanged((int)((double)i / wordSet.Count * 100), i, wordSet.Count,
+                //Don't flood progress updates. Only do it every 5%. Process so fast UI can't keep up anyway.
+                int pct = (int)((double)i / graph.WordSet.Count * 100);
+                if (pct % 5 == 0 || i == graph.WordSet.Count)
+                    OnProgressChanged(pct, i, graph.WordSet.Count,
                                   $"Finding Neighbors");
 
                 //Deduplication: As later we only consider words in order where i < j < k < l < m
                 //to prevent repeated combinations of words in a different order. So do not add
                 //neighbors who are alphabetically lower than the current word.
-                foreach (var word2 in wordSet.Where(w => w > word))
+                foreach (var word2 in graph.WordSet.Where(w => w > word))
                 {
                     if (cancellationToken.IsCancellationRequested)
                         cancellationToken.ThrowIfCancellationRequested();
@@ -99,9 +110,6 @@ namespace FiveWordFinder.WordProcessing
                     //words before adding as a neighbor.
                     word.AddNeighbor(word2);
                 }
-
-                graph.WordSet.Add(word);
-                OnWordAdded(word);
             }
         }
 

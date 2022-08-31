@@ -128,7 +128,10 @@ namespace FiveWordFinderWpf.ViewModel
             generator.ProgressChanged += GraphGenerator_ProgressChanged;
             generator.WordAdded += (o, e) =>
             {
-                _applicationState.MainThreadDispatcher.Invoke(() => { WordsList.Add(new WordDataView(e.Word.Word, e.Word.CountUniqueLetters, e.Word.Neighbors.Count)); });
+                _applicationState.MainThreadDispatcher.Invoke(() => 
+                {
+                    WordsList.Add(new WordDataView(e.Word));
+                });
             };
         }
 

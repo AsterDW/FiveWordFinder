@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using FiveWordFinder.Extensions;
 using FiveWordFinder.WordProcessing.Events;
 using FiveWordFinder.WordProcessing.Model;
 
@@ -64,6 +65,46 @@ namespace FiveWordFinder.WordProcessing.Strategies
         {
             CliqueList.Clear();
             OnProgressChanged(0, 0, 0, string.Empty);
+        }
+
+        protected IEnumerable<IEnumerable<FiveCharWord>> GetStackCombinations(Stack<FiveCharWord> wordStack)
+        {
+            var words = wordStack.ToArrayFiFo();
+            var groups = new List<IEnumerable<FiveCharWord>>();
+
+            foreach (var word in words)
+            {
+                List<FiveCharWord> group = new List<FiveCharWord>();
+                group.Add(word);
+                group.AddRange(word.Anagrams);
+                groups.Add(group);
+            }
+
+            return CartesianProducts(groups, 0);
+        }
+
+        protected IEnumerable<IEnumerable<FiveCharWord>> CartesianProducts(IList<IEnumerable<FiveCharWord>> lists, int depth, Stack<FiveCharWord>? product = null)
+        {
+            product = product ?? new Stack<FiveCharWord>();
+
+            foreach (var word in lists[depth])
+            {
+                product.Push(word);
+
+                if (product.Count == lists.Count)
+                {
+                    yield return product.ToArray().OrderBy(w => w);
+                }
+                else
+                {
+                    foreach (var pItem in CartesianProducts(lists, depth + 1, product))
+                    {
+                        yield return pItem;
+                    }
+                }
+
+                product.Pop();
+            }
         }
     }
 }

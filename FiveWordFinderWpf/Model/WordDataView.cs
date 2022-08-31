@@ -9,19 +9,44 @@ using FiveWordFinder.WordProcessing.Model;
 
 namespace FiveWordFinderWpf.Model
 {
-    public class WordDataView
+    public class WordDataView : INotifyPropertyChanged
     {
-        public string Word { get; private set; }
+        private FiveCharWord _word;
+        public string Word { get { return _word.Word; } }
 
         public int LetterCount { get; private set; }
 
-        public int NeighborsCount { get; private set; }
+        public IReadOnlyList<string> Anagrams { get { return _word.Anagrams.Select(a => a.Word).ToList(); } }
 
-        public WordDataView(string word, int letterCount, int neighborsCount)
+        public int NeighborsCount { get { return _word.Neighbors.Count; } }
+
+        #region INotifyPropertyChanged
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
-            Word = word;
-            LetterCount = letterCount;
-            NeighborsCount = neighborsCount;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        #endregion INotifyPropertyChanged
+
+        public WordDataView(FiveCharWord word)
+        {
+            _word = word;
+            LetterCount = _word.CountUniqueLetters;
+
+            _word.PropertyChanged += word_PropertyChanged;
+        }
+
+        private void word_PropertyChanged(object? sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(_word.Anagrams))
+            {
+                OnPropertyChanged(nameof(Anagrams));
+            }
+            else if (e.PropertyName == nameof(_word.Neighbors))
+            {
+                OnPropertyChanged(nameof(NeighborsCount));
+            }
         }
     }
 }

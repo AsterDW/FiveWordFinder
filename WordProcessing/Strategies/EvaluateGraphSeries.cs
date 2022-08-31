@@ -42,11 +42,15 @@ namespace FiveWordFinder.WordProcessing.Strategies
                 wordStack.Push(word);
                 if (wordStack.Count == depth)
                 {
-                    CliqueList.Add(wordStack.ToArrayFiFo());
+                    var wordArrays = GetStackCombinations(wordStack);
+                    foreach (var a in wordArrays)
+                    {
+                        CliqueList.Add(a.ToArray());
+                    }
                 }
                 else
                 {
-                    recursiveFindCliques(depth, wordStack, clique.IntersectWithHashSet(word.Neighbors));
+                    recursiveFindCliques(depth, wordStack, clique.IntersectWith(word.Neighbors));
                 }
 
                 wordStack.Pop();
