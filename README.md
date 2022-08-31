@@ -22,7 +22,7 @@ Matt then noted he was provided an optimized algorithm written by [Benjamin Paas
 
 Benjamin's approach was able to solve this problem in 21 minutes ad 46 seconds. A significant improvement over the month taken by Parker's original algorithm.
 
-## A .Net Approach
+## My Approach
 I was curious about implementing a take on the faster graph theory in C# to see how quickly I could get the analysis completed with my own implementation and have a go at further optimizations. I also wanted an excuse to spend more time with WPF UI development as in my day job I spend most of my time with WinForms. As such there is extra work in places that isn't normally needed.
 
 To accomplish this task the process performs the following:
